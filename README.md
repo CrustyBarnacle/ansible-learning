@@ -1,6 +1,9 @@
 ## ansible-learning
 Learning the Ansible way - node deploy, configure, and jupyter lab deployment
 
+*NOTE*: Currently works on one cloud provisionaing service (https://cloud.linode.com/)
+The *deploy_instance\*.yml* currently deploys a nano instance of _ubuntu22.04_.
+
 ### Because an online class
 Since I was about to start working on [Python For Defenders](https://learn.taggart-tech.com/p/python-for-defenders-pt1), why not make this an opportunity for another project, and automate deploying the [lab environment](https://github.com/The-Taggart-Institute/python-for-defenders) for the class? :-D
 
