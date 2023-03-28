@@ -1,0 +1,14 @@
+all:
+  hosts:
+    ansible-host1-config:
+    ansible-host2-lab:
+  children:
+    configuration:
+      hosts:
+        ansible-host1-config:
+    python_lab:
+      hosts:
+        ansible-host2-lab:
+
+  vars:
+   ansible_user: <ansible_user>

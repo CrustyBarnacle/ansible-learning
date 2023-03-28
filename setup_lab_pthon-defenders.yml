@@ -1,0 +1,46 @@
+---
+- name: Setup environment for Python for Defenders Lab
+  hosts: python_lab
+
+  vars:
+    work_user: petrielabs
+    working_dir: /home/{{ work_user }}/python_lab
+    poetry_path: /home/{{ work_user }}/.local/bin/poetry
+    http_port: 8888
+
+  vars_files:
+    - ./group_vars/vars.yml
+
+  tasks:
+
+    - name: Install pipx
+      apt:
+        pkg:
+          - pipx
+        state: latest
+        update_cache: true
+      become: true
+
+    - name: Install poetry
+      community.general.pipx:
+        name: poetry
+        state: present
+
+    - name: Clone python-for-defenders repo
+      ansible.builtin.git:
+        repo: https://github.com/The-Taggart-Institute/python-for-defenders.git
+        dest: "{{ working_dir }}"
+
+    - name: Install lab dependancies via poetry
+      ansible.builtin.command: "{{ poetry_path }} install"
+      args:
+        chdir: "{{ working_dir }}"
+
+    - name: Start the jupyter lab environment
+      ansible.builtin.shell: "{{ poetry_path }} shell jupyter lab --no-browser"
+      args:
+        chdir: "{{ working_dir }}"
+
+    - name: Print message
+      ansible.builtin.debug:
+        msg: Environment setup and lab running...

@@ -1,0 +1,16 @@
+- name: Create Linode Instance
+  hosts: localhost
+  vars_files:
+      - ./group_vars/vars.yml
+  tasks:
+    - name: Create a Linode instance
+      linode.cloud.instance:
+        api_token: "{{ api_token }}"
+        label: "{{ instance_name }}"
+        type: g6-nanode-1
+        region: "{{ instance_region }}"
+        image: linode/ubuntu22.04
+        root_pass: "{{ password }}"
+        authorized_keys:
+         - "{{ ssh_key }}"
+        state: present
