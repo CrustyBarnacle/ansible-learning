@@ -1,0 +1,19 @@
+# add your variables here
+# Ansible Vault: https://docs.ansible.com/ansible/latest/cli/ansible-vault.html
+
+# Cloud provisioning
+instance_name: descriptive-name-type
+instance_region: us-west # any valid region for the cloud provider
+
+# users for tasks, ansible configuration
+work_user: <sudo_username> # user to login and run tasks as; can be a different user than the ansible_user
+ansible_user: <ansible_user>
+
+
+# SSH_KEY for passwordless ssh
+# Review deploy_instance_linode.yml, "authorized_keys:"
+# Ansible vault process will create the full encrypted value; this is for refeence/example only.
+ssh_key:  !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          ....
+
