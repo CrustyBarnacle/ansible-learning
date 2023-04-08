@@ -36,6 +36,7 @@
       args:
         chdir: "{{ working_dir }}"
 
+    # TODO Move to jupyter_role (will include certbot, ufw)
     - name: Start the jupyter lab environment
       ansible.builtin.shell: "{{ poetry_path }} shell jupyter lab --no-browser"
       args:
