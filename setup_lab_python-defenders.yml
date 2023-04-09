@@ -3,11 +3,6 @@
 - name: Setup environment for Python for Defenders Lab
   hosts: python_lab
 
-  vars:
-    working_dir: /home/{{ work_user }}/python_lab
-    poetry_path: /home/{{ work_user }}/.local/bin/poetry
-    http_port: 8888
-
   vars_files:
     - ./group_vars/my_vars.yml
 
