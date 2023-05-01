@@ -13,4 +13,7 @@
         root_pass: "{{ password }}"
         authorized_keys:
          - "{{ ssh_key }}"
+        tags:
+          - ansible
+          - env=lab
         state: present
