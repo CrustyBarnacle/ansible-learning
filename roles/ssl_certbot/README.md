@@ -30,14 +30,9 @@ Including an example of how to use your role (for instance, with variables passe
 License
 -------
 
-### License
-All work(s) not attributed to others: JupyterLab Ansible Role © 2023 by CrustyBarnacle is licensed under CC BY 4.0
+BSD
 
 Author Information
 ------------------
 
-- 👋 Hi, I’m @CrustyBarnacle
-- 👀 I’m interested in Networking (all the kinds), Python, and InfoSec
-- 🌱 I’m currently learning K8s, Docker, and containers in general, and have my Security+
-- 💞️ I’m looking to collaborate on Documentation improvement projects.
-- 📫 How to reach me: [Tootin @CrustyB](https://ioc.exchange/@CrustyB)
+An optional section for the role authors to include contact information, or a website (HTML is not allowed).

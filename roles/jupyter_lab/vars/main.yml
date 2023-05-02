@@ -1,2 +1,9 @@
 ---
-# vars file for jupyter_lab
+# Starting/working directory for git, pipx, poetry
+working_dir: /home/{{ work_user }}/python_lab
+
+# Full path to poetry. May be a symlink - just needs to be in the PATH of  `work_user`.
+poetry_path: /home/{{ work_user }}/.local/bin/poetry
+
+# Jupyter Lab
+http_port: 8888
