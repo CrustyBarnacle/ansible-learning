@@ -1,2 +1,8 @@
 ---
 # tasks file for zsh
+- name: Add .zshrc for `user`
+template:
+  src: zshrc.j2
+  dest: "{{ zshrc }}"
+  backup: true
+  mode: 0640
